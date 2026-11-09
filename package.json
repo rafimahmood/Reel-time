@@ -1,0 +1,12 @@
+{
+  "name": "reel-time",
+  "private": true,
+  "description": "Reel Time, a Scottish country dancing game in the browser",
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0",
+    "three": "0.128.0"
+  }
+}
