@@ -41,15 +41,45 @@ You can pick who you dance as and who your partner is from your own reeling set,
 
 ## How it's built
 
-- **One self-contained file.** Plain HTML, CSS and JavaScript in `index.html`, with no build step and no framework.
+- **No build step.** Plain HTML, CSS and JavaScript, with no framework and no bundler. Open `index.html` and it runs.
 - **2D view.** Drawn with the Canvas API.
 - **3D view.** [three.js](https://threejs.org/) (r128). Everything is built in code from primitives: lathed kilts and gowns, a tartan texture woven pixel by pixel from real setts, and Mii-style faces painted onto canvas textures.
 - **Choreography engine.** Each dance is a script of figures (turns, casts, circles, reels of three, sets) that generates every dancer's path through time. Scoring compares your position and button timing with that path.
 - **The band.** It's synthesised live with the Web Audio API: musette accordion, second box, fiddle, piano vamp, bass and brushed drums. It plays the traditional tunes, read from ABC notation by a small parser written for the project. The game clock runs off the audio clock, so the steps stay in time with the music.
 - **Testing.** Simulated players drive the game in a headless browser. They press slightly early or late on purpose, which is how difficulty and timing windows were tuned.
 
+## Project layout
+
+```
+index.html          the page: HUD, menus and screens
+css/style.css       all the styling
+js/choreo.js        utilities and the choreography builder
+js/dances.js        the seven dances, figure by figure
+js/characters.js    your reeling set, faces, the wardrobe and tartans
+js/save.js          save data (localStorage)
+js/band.js          the Web Audio band and the ABC tune parser
+js/game.js          game state, input actions, scoring, tricks, the demo dancer
+js/view-2d.js       the view from above
+js/view-3d.js       the first-person view and the ballroom (three.js)
+js/ui.js            main loop, results, menus, character editor, Outfitter, controls
+js/ball.js          The Ball: dance card, partners, meters, the waltz
+js/ball-world.js    walking the hall, the bar and the terrace between dances
+js/main.js          the closing embrace, start-up wiring and test hooks
+tests/              automated tests (Playwright)
+```
+
+The scripts are plain `<script>` tags loaded in this order and share one global scope.
+
 ## Running it locally
 
-Download `index.html` and open it in Chrome, Safari or Firefox. The view from above works offline. The first-person view needs an internet connection to load three.js.
+Download the repo (**Code → Download ZIP**), unzip it and open `index.html` in Chrome, Safari or Firefox. The view from above works offline. The first-person view needs an internet connection to load three.js.
+
+## Tests
+
+See [`tests/README.md`](tests/README.md). In short: `npm install`, then `npm test`.
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
 
 ![Menu](screenshots/menu.jpg)
