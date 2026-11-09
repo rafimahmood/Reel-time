@@ -2,7 +2,7 @@
 
 A Scottish country dancing game that runs in the browser. You dance real reels, bar by bar, and you're scored on how well you follow the figures, take and let go of hands, keep time when you set, and hooch at the end of a phrase. Between dances you can walk round the ball itself.
 
-**[▶ Play it here](https://rafimahmood.github.io/reel-time/)** on a laptop, or on a phone held sideways.
+**[▶ Play it here](https://rafimahmood.github.io/Reel-time/)** on a laptop, or on a phone held sideways.
 
 ![Dancing the Dashing White Sergeant from above](screenshots/above.jpg)
 
